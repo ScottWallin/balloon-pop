@@ -3,6 +3,8 @@ let height = 120
 let width = 100
 let inflationRate = 20
 let maxsize = 300
+let popCount = 0
+
 
 
 function inflate() {
@@ -13,6 +15,7 @@ function inflate() {
 
   if (height >= maxsize){
     console.log("pop the balloon")
+    popCount++
     height = 0
     width = 0
   }
