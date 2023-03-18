@@ -5,7 +5,9 @@ let inflationRate = 20
 let maxsize = 300
 let popCount = 0
 
-
+function startGame(){
+  console.log("time to start")
+}
 
 function inflate() {
   clickCount++
@@ -18,6 +20,7 @@ function inflate() {
     popCount++
     height = 0
     width = 0
+    document.getElementById('pop-count').innerText = popCount.toString()
   }
 
   balloonElement.style.height = height + "px"
