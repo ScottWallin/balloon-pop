@@ -5,6 +5,7 @@ let inflationRate = 20
 let maxsize = 300
 let popCount = 0
 
+
 function startGame(){
   console.log("time to start")
 }
