@@ -91,6 +91,32 @@ draw()
 
 let players = []
 
-function setPlayer(){
+function setPlayer(event){
+event.preventDefault()
+let form = event.target
+
+let playerName = form.playerName.value
+
+let currentPlayer = players.find(player => player.name == playerName)
+
+if(!currentPlayer){
+  currentPlayer = {name: playerName, topScore: 0 }
+}
+
+
+console.log(currentPlayer)
+
+form.reset()
+}
+
+function savePlayers() {
+  window.localStorage.setItem("players", JSON.stringify(players))
+}
+
+function loadPlayers() {
+  let playersData = JSON.parse(window.localStorage.getItem("players"))
+  if(!playersData){
+    players = playersData
+  }
   
 }
