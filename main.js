@@ -115,7 +115,7 @@ function savePlayers() {
 
 function loadPlayers() {
   let playersData = JSON.parse(window.localStorage.getItem("players"))
-  if(playersData){
+  if (playersData) {
     players = playersData
   }
   
