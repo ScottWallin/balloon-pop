@@ -118,5 +118,4 @@ function loadPlayers() {
   if (playersData) {
     players = playersData
   }
-  
 }
