@@ -15,6 +15,7 @@ let currentPopCount = 0
 let gameLength = 5000
 let clockId = 0
 let timeRemaining = 0
+let currentPlayer = {}
 
 function startGame() {
   startButton.setAttribute("disabled", "true")
@@ -66,7 +67,7 @@ function draw(){
   
   clickCountElem.innerText = clickCount.toString()
   popCountElem.innerText = currentPopCount.toString()
-  highPopCountElem.innerText = highestPopCount.toString()
+  highPopCountElem.innerText = currentPlayer.topScore.toString()
 }
 
 function stopGame() {
@@ -79,8 +80,9 @@ clickCount = 0
 height = 120
 width = 100
 
-if(currentPopCount > highestPopCount) {
-  highestPopCount = currentPopCount
+if(currentPopCount > currentPlayer.topScore) {
+  currentPlayer.topScore = currentPopCount
+  savePlayers()
   }
 currentPopCount = 0
 
@@ -90,6 +92,7 @@ draw()
 // #endregion
 
 let players = []
+loadPlayers()
 
 function setPlayer(event){
 event.preventDefault()
@@ -97,16 +100,16 @@ let form = event.target
 
 let playerName = form.playerName.value
 
-let currentPlayer = players.find(player => player.name == playerName)
+currentPlayer = players.find(player => player.name == playerName)
 
 if(!currentPlayer){
   currentPlayer = {name: playerName, topScore: 0 }
+  players.push(currentPlayer)
+  savePlayers()
 }
 
-
-console.log(currentPlayer)
-
 form.reset()
+draw()
 }
 
 function savePlayers() {
