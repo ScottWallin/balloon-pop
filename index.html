@@ -12,19 +12,21 @@
 <body>
 
   <header>
-    <div class="logo-container">
+    <div class="container shadow">
       <img src="balloon-pop-logo.png" alt="balloon pop logo">
     </div>
-  </header>
 
-  <form class="card" id="player-form" onsubmit="setPlayer(event)">
+  </header>
+  <main class="container card">
+
+  <form id="player-form" onsubmit="setPlayer(event)">
     <div>
       <label for="name">Player Name:</label>
       <input type="text" name="playerName" required>
     </div>
     <button type="submit">OK</button>
   </form>
-
+  
   <section id="game" class="game hidden">
     <div>
       <button onClick ="changePlayer()">Change Player</button>
@@ -32,12 +34,12 @@
     <div>
       <button id="start-button" onclick="startGame()">START GAME</button>
     </div>
-
+    
     <button id="inflate-button" onclick="inflate()" disabled="true">
       Inflate
       <span id="click-count"></span>
     </button>
-
+    
     <div>
       <span>Balloons Popped:</span>
       <span id="pop-count">0</span>
@@ -50,10 +52,11 @@
       <span>Time Remaining:</span>
       <span id="countdown">0</span>
     </div>
-
+    
     <div id="balloon" class="balloon"></div>
   </section>
-
+</main>
+  
 
 
   <script src="main.js"></script>
