@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Balloon Pop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,10 +20,12 @@
 
   </header>
   <main class="container card">
-
-  <form id="player-form" onsubmit="setPlayer(event)">
+  <form class="d-flex space-between" id="player-form" onsubmit="setPlayer(event)">
     <div>
-      <label for="name">Player Name:</label>
+      <label for="name">
+      <i class="fa fa-user-circle"></i>
+      <span>Player Name:</span>
+    </label>
       <input type="text" name="playerName" required>
     </div>
     <button type="submit">OK</button>
