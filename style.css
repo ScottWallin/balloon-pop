@@ -2,6 +2,20 @@ body{
   background-color: palegoldenrod;
 }
 
+.header{
+  margin: 3em 0;
+  }
+
+.logo-container{
+  width: 50%;
+  margin: auto;
+}
+
+img{
+  max-width: 100%;
+}
+
+
 .balloon{
   height: 120px;
   width: 100px;
