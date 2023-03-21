@@ -23,15 +23,20 @@
   <form class="d-flex space-between" id="player-form" onsubmit="setPlayer(event)">
     <div>
       <label for="name">
-      <i class="fa fa-user-circle"></i>
-      <span>Player Name:</span>
-    </label>
+       <i class="fa fa-user-circle" aria-hidden="true"></i>
+       <span>Player Name:</span>
+      </label>
       <input type="text" name="playerName" required>
     </div>
     <button type="submit">OK</button>
   </form>
   
-  <section id="game" class="game hidden">
+  <!--TODO replace hidden class  -->
+
+  <section id="game" class="game">
+
+    <div class="card bg-dark text-light"></div>
+     <span id="player-name"></span>
     <div>
       <button onClick ="changePlayer()">Change Player</button>
     </div>

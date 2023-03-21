@@ -59,15 +59,19 @@ function inflate() {
 function draw(){
   let balloonElement = document.getElementById("balloon")
   let clickCountElem = document.getElementById("click-count")
-  
-  balloonElement.style.height = height + "px"
-  balloonElement.style.width = width + "px"
   let popCountElem = document.getElementById('pop-count')
   let highPopCountElem = document.getElementById('high-pop-count')
+  let playerNameElem = document.getElementById('player-name')
+
+
+  balloonElement.style.height = height + "px"
+  balloonElement.style.width = width + "px"
   
   clickCountElem.innerText = clickCount.toString()
   popCountElem.innerText = currentPopCount.toString()
   highPopCountElem.innerText = currentPlayer.topScore.toString()
+
+  playerNameElem.innerText = currentPlayer.name
 }
 
 function stopGame() {
