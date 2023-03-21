@@ -43,20 +43,27 @@ function inflate() {
   clickCount++
   height += inflationRate
   width += inflationRate
-  
+  checkBalloonPop()
+  draw()
+}
+
+function checkBalloonPop(){
   if (height >= maxsize){
     console.log("pop the balloon")
     let balloonElement = document.getElementById("balloon")
-    balloonElement?.classList.add("green")
+    balloonElement?.classList.remove(currentColor)
+    getRandomColor()
+    balloonElement?.classList.add(currentColor)
     currentPopCount++
     height = 0
     width = 0
   }
-  draw()
 }
 
-functiongetRandomColor(){
+function getRandomColor(){
   let i = Math.floor(Math.random() * possibleColors.length);
+  currentColor = possibleColors[i]
+}
 
 function draw(){
   let balloonElement = document.getElementById("balloon")
