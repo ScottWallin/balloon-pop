@@ -1,7 +1,3 @@
-// BUTTONS
-let startButton = document.getElementById('start-button')
-let inflateButton = document.getElementById('inflate-button')
-
 // #region GAME LOGIC AND DATA
 
 // DATA
@@ -18,10 +14,9 @@ let timeRemaining = 0
 let currentPlayer = {}
 
 function startGame() {
-  startButton.setAttribute("disabled", "true")
-  inflateButton.removeAttribute("disabled")
+  document.getElementById("game-controls")?.classList.remove("hidden")
+  document.getElementById("main-controls")?.classList.add("hidden")
   startClock()
-
   setTimeout(stopGame, gameLength)
 }
 
@@ -77,12 +72,12 @@ function draw(){
 function stopGame() {
   console.log("the game is over")
 
-  inflateButton.setAttribute("disabled", "true")
-  startButton.removeAttribute("disabled")
+  document.getElementById("main-controls")?.classList.remove("hidden")
+  document.getElementById("game-controls")?.classList.add("hidden")
 
-clickCount = 0
-height = 120
-width = 100
+  clickCount = 0
+  height = 120
+  width = 100
 
 if(currentPopCount > currentPlayer.topScore) {
   currentPlayer.topScore = currentPopCount
